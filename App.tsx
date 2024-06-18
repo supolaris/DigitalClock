@@ -1,6 +1,8 @@
 import {View, Text, ImageBackground, StatusBar} from 'react-native';
 import React, {useEffect, useState} from 'react';
 
+import {MyStack} from './src/routes/Stack';
+
 import dayjs from 'dayjs';
 
 const App = () => {
@@ -14,29 +16,7 @@ const App = () => {
     return clearInterval(myInterval);
   }, []);
 
-  return (
-    <>
-      <StatusBar translucent backgroundColor="transparent" />
-      <ImageBackground
-        style={{flex: 1}}
-        source={require('./assets/wallpaper.jpg')}>
-        <View style={{alignItems: 'center', paddingTop: 60}}>
-          <Text style={{fontSize: 20, color: 'white'}}>
-            {date.format('dddd, DD MMMM')}
-          </Text>
-          <Text
-            style={{
-              fontSize: 45,
-              fontWeight: 'bold',
-              paddingTop: 10,
-              color: 'white',
-            }}>
-            {date.format('HH:mm:ss')}
-          </Text>
-        </View>
-      </ImageBackground>
-    </>
-  );
+  return <MyStack />;
 };
 
 export default App;

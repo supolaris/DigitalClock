@@ -8,7 +8,10 @@ export const MyStack = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
         <Stack.Screen name="BottomTabs" component={MyBottomTabs} />
       </Stack.Navigator>
     </NavigationContainer>
